@@ -43,6 +43,7 @@ public class Game extends AppCompatActivity {
 
     //Ends the game, makes sure everything is reset, makes sure the user is returned to the main menu
     public void endGame(){
+        Log.d("aktivitet", "SPILLET ER SLUT!!!!");
         setGameState(0);
         if(!activities.isEmpty()){
             activities.clear();

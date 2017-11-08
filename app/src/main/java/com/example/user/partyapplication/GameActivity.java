@@ -7,14 +7,16 @@ import android.view.View;
 
 //Return to MainMenuActivity, load fragments
 public class GameActivity extends UpdatableActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        this.string = "Game!";
     }
 
     public void nextGame(View view){
-        Log.d("bammelam", "Så er vi i gang med spillet!");
+        Log.d("aktivitet", "NY AKTIVITET!!!");
         nextActivity();
         finish();
     }

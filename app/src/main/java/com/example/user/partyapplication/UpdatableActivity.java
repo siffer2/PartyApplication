@@ -8,11 +8,11 @@ import android.util.Log;
 
 public abstract class UpdatableActivity extends AppCompatActivity {
 
-    String string = new String("Hello");
+    public String string = new String("Hello");
     UpdaterApplication app;
     //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     //protected static Activity thisActivity;
-    //protected static Game game = new Game();
+    protected static Game game = new Game();
 
     public UpdatableActivity(){
     }
@@ -33,14 +33,16 @@ public abstract class UpdatableActivity extends AppCompatActivity {
 
     public void nextActivity(){
         //this.setThisActivity(this);
-        Class NextActivity = app.getGame().nextActivity();
+        Class NextActivity = game.nextActivity();
         if(NextActivity!=null){
             Log.d("bammelam","Næste aktivitet indlæses");
-            loadActivity(getThisActivity(), NextActivity);
+            Log.d("aktivitet", "Nuværende aktivitet:"+app.getUpdatable().string);
+            loadActivity(app.getUpdatable()  //getThisActivity()
+                    , NextActivity);
         }
         else{
             Log.d("bammelam","Returnerer til menuen");
-            loadActivity(getThisActivity(), MainMenuActivity.class);
+            //loadActivity(getThisActivity(), MainMenuActivity.class);
         }
     }
 
@@ -60,12 +62,16 @@ public abstract class UpdatableActivity extends AppCompatActivity {
         super.onStart();
         app = (UpdaterApplication)getApplication();
         app.setUpdatable(this);
+        Log.d("aktivitet", "currentactivity er" + app.getUpdatable());
+        //Log.d("aktivitet", "currentactivity er" + ((UpdaterApplication) getApplication()).getUpdatable());
+        Log.d("aktivitet", "Aktiviteter:"+game.activities.toString());
+
     }
 
     @Override
     protected void onStop() {
-        app = (UpdaterApplication)getApplication();
-        app.setUpdatable(null);
+        //app = (UpdaterApplication)getApplication();
+        //app.setUpdatable(null);
         super.onStop();
     }
 }

@@ -9,11 +9,12 @@ import android.util.Log;
 public class UpdaterApplication extends Application
 {
     private UpdatableActivity currentActivity = null;
-    public static Game game = new Game();
+    /*public static Game game = new Game();
 
     public synchronized Game getGame(){
         return game;
     }
+    */
     public synchronized void setUpdatable(UpdatableActivity updatable) {
         this.currentActivity = updatable;
         //Log.d("TAG3", currentActivity.string);
@@ -39,11 +40,13 @@ public class UpdaterApplication extends Application
         super.onCreate();
 
         Log.d("Tag2", "Application");
+        /*
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 loadDataFromServer();
             }});
         thread.start();
+        */
     }
 }
