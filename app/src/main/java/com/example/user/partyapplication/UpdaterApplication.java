@@ -9,12 +9,19 @@ import android.util.Log;
 public class UpdaterApplication extends Application
 {
     private UpdatableActivity currentActivity = null;
+    public static Game game = new Game();
 
+    public synchronized Game getGame(){
+        return game;
+    }
     public synchronized void setUpdatable(UpdatableActivity updatable) {
         this.currentActivity = updatable;
-        Log.d("TAG3", currentActivity.string);
+        //Log.d("TAG3", currentActivity.string);
     }
 
+    public synchronized UpdatableActivity getUpdatable(){
+        return currentActivity;
+    }
     private synchronized void updateCurrentActivity() {
         if (currentActivity != null)
             currentActivity.updateActivityFromBgThread();
