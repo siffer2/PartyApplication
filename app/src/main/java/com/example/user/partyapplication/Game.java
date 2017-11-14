@@ -23,6 +23,14 @@ public class Game extends AppCompatActivity {
     //Starts the game
     public boolean BeginGame(){
         Log.d("bammelam","Gamestate er 1, der genereres aktiviteter");
+        //Makes sure that no activities is in the queue or the stack when the game starts
+        if(!activities.isEmpty()){
+            activities.clear();
+        }
+        if(!passedActivities.isEmpty()){
+            passedActivities.clear();
+        }
+
         setGameState(1);
         generateActivities();
         return true;
@@ -30,9 +38,9 @@ public class Game extends AppCompatActivity {
 
     //Fills out the activity queue
     public void generateActivities(){
-        activities.add(new GameActivity());
-        activities.add(new GameActivity());
-        activities.add(new GameActivity());
+        activities.add(new GameDrawingActivity());
+        //activities.add(new GameActivity());
+        //activities.add(new GameActivity());
     }
 
     //Updates gameState, should check wether the activity queu contains values or not

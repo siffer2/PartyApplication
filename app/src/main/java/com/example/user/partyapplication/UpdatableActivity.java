@@ -11,7 +11,6 @@ public abstract class UpdatableActivity extends AppCompatActivity {
     public String string = new String("Hello");
     UpdaterApplication app;
     //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    //protected static Activity thisActivity;
     protected static Game game = new Game();
 
     public UpdatableActivity(){
@@ -32,16 +31,13 @@ public abstract class UpdatableActivity extends AppCompatActivity {
     }
 
     public void nextActivity(){
-        //this.setThisActivity(this);
         Class NextActivity = game.nextActivity();
         if(NextActivity!=null){
-            Log.d("bammelam","Næste aktivitet indlæses");
             Log.d("aktivitet", "Nuværende aktivitet:"+app.getUpdatable().string);
-            loadActivity(app.getUpdatable()  //getThisActivity()
-                    , NextActivity);
+            loadActivity(app.getUpdatable(), NextActivity);
         }
         else{
-            Log.d("bammelam","Returnerer til menuen");
+            Log.d("aktivitet","Returnerer til menuen");
             //loadActivity(getThisActivity(), MainMenuActivity.class);
         }
     }
@@ -63,8 +59,6 @@ public abstract class UpdatableActivity extends AppCompatActivity {
         app = (UpdaterApplication)getApplication();
         app.setUpdatable(this);
         Log.d("aktivitet", "currentactivity er" + app.getUpdatable());
-        //Log.d("aktivitet", "currentactivity er" + ((UpdaterApplication) getApplication()).getUpdatable());
-        Log.d("aktivitet", "Aktiviteter:"+game.activities.toString());
 
     }
 
