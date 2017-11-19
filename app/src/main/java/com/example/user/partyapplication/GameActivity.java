@@ -18,11 +18,6 @@ public class GameActivity extends UpdatableActivity {
     public void nextGame(View view){
         Log.d("aktivitet", "NY AKTIVITET!!!");
         nextActivity();
-        finish();
-    }
-
-    @Override
-    public void updateActivity() {
-
+        //finish();
     }
 }

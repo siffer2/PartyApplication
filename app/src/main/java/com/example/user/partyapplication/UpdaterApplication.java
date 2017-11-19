@@ -23,17 +23,18 @@ public class UpdaterApplication extends Application
     public synchronized UpdatableActivity getUpdatable(){
         return currentActivity;
     }
+    /*
     private synchronized void updateCurrentActivity() {
         if (currentActivity != null)
             currentActivity.updateActivityFromBgThread();
     }
-
+    */
     private void loadDataFromServer() {
         // ...
         // load data from server
         // ...
 
-        updateCurrentActivity();
+        //updateCurrentActivity();
     }
 
     public void onCreate() {

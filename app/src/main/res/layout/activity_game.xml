@@ -10,15 +10,44 @@
         android:id="@+id/linearLayout1"
         android:layout_width="368dp"
         android:layout_height="495dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_weight="0"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
 
+        <TextView
+            android:id="@+id/text_view_id"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Placeholder Questions text aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/button1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Game Button"
+            android:onClick="nextGame"
+            />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Game Button"
+            android:onClick="nextGame"
+            />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Game Button"
+            android:onClick="nextGame"
+            />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="Game Button"
             android:onClick="nextGame"

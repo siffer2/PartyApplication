@@ -38,9 +38,11 @@ public class Game extends AppCompatActivity {
 
     //Fills out the activity queue
     public void generateActivities(){
+        activities.add(new GameActivity());
+        activities.add(new GameActivity());
         activities.add(new GameDrawingActivity());
-        //activities.add(new GameActivity());
-        //activities.add(new GameActivity());
+        activities.add(new GameActivity());
+
     }
 
     //Updates gameState, should check wether the activity queu contains values or not

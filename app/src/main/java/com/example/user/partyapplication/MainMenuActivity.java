@@ -21,9 +21,4 @@ public class MainMenuActivity extends UpdatableActivity {
         nextActivity();
         //finish();
     }
-
-    @Override
-    public void updateActivity() {
-
-    }
 }
