@@ -10,7 +10,7 @@ public abstract class UpdatableActivity extends AppCompatActivity {
 
     public String string = new String("Hello");
     UpdaterApplication app;
-    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    //Lasse's code from here on out
     //protected static Activity thisActivity;
     protected static Game game = new Game();
 
@@ -46,7 +46,7 @@ public abstract class UpdatableActivity extends AppCompatActivity {
         }
     }
 
-    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    //End of Lasse's code
     public final void updateActivityFromBgThread() {
         runOnUiThread(new Runnable() {
             @Override
