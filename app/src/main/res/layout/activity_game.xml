@@ -19,14 +19,16 @@
             android:id="@+id/text_view_id"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Placeholder Questions text aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
+            android:text="Placeholder Questions text"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"/>
         <Button
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="Game Button"
-            android:onClick="nextGame"
+            android:onClick="isCorrectAnswer"
             />
         <Button
             android:id="@+id/button2"
@@ -34,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="Game Button"
-            android:onClick="nextGame"
+            android:onClick="isCorrectAnswer"
             />
         <Button
             android:id="@+id/button3"
@@ -42,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="Game Button"
-            android:onClick="nextGame"
+            android:onClick="isCorrectAnswer"
             />
         <Button
             android:id="@+id/button4"
@@ -50,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="Game Button"
-            android:onClick="nextGame"
+            android:onClick="isCorrectAnswer"
             />
 
     </LinearLayout>

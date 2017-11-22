@@ -1,10 +1,12 @@
 <resources>
+    <!-- For string arrays: First value is question, last value is correct answer, repeating the value -->
     <string-array name="q1">
         <item>Quiz1Question</item>
         <item>Quiz1Answer1</item>
         <item>Quiz1Answer2</item>
         <item>Quiz1Answer3</item>
         <item>Quiz1Answer4</item>
+        <item>Quiz1Answer1</item>
     </string-array>
     <string-array name="q2">
         <item>Quiz2Question</item>
@@ -12,6 +14,7 @@
         <item>Quiz2Answer2</item>
         <item>Quiz2Answer3</item>
         <item>Quiz2Answer4</item>
+        <item>Quiz2Answer2</item>
     </string-array>
     <string-array name="q3">
         <item>Quiz3Question</item>
@@ -19,25 +22,8 @@
         <item>Quiz3Answer2</item>
         <item>Quiz3Answer3</item>
         <item>Quiz3Answer4</item>
+        <item>Quiz3Answer3</item>
     </string-array>
     <string name="app_name">PartyApplication</string>
     <string name="title_activity_main">MainActivity</string>
-    <!-- Quiz 1 -->
-    <string name="quiz0">Quiz1Q</string>
-    <string name="quiz1">Quiz1Answer1</string>
-    <string name="quiz2">Quiz1Answer2</string>
-    <string name="quiz3">Quiz1Answer3</string>
-    <string name="quiz4">Quiz1Answer4</string>
-    <!-- Quiz 2 -->
-    <string name="quiz5">Quiz2Q</string>
-    <string name="quiz6">Quiz2Answer1</string>
-    <string name="quiz7">Quiz2Answer2</string>
-    <string name="quiz8">Quiz2Answer3</string>
-    <string name="quiz9">Quiz2Answer4</string>
-    <!-- Quiz 3 -->
-    <string name="quiz10">Quiz3Q</string>
-    <string name="quiz11">Quiz3Answer1</string>
-    <string name="quiz12">Quiz3Answer2</string>
-    <string name="quiz13">Quiz3Answer3</string>
-    <string name="quiz14">Quiz3Answer4</string>
 </resources>
