@@ -1,5 +1,6 @@
 package com.example.user.partyapplication;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class GameActivity extends UpdatableActivity {
         }
 
         this.string = "Game!";
+
     }
 
     //Method called on all button's onClick()
@@ -52,6 +54,7 @@ public class GameActivity extends UpdatableActivity {
         }
         else{
             Log.d("aktivitet","Ikke korrekt svar");
+            showEditDialog();
         }
 
         //Log.d("aktiviteter",v.getResources().getResourceEntryName(v.getId()));
@@ -78,6 +81,18 @@ public class GameActivity extends UpdatableActivity {
     private int randomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
+
+    public void killThis(View v){
+        //dismiss();
+        editNameDialogFragment.dismiss();
+    }
+    PenaltyFragment editNameDialogFragment;
+    private void showEditDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+        editNameDialogFragment = PenaltyFragment.newInstance("Some Title");
+        editNameDialogFragment.show(fm, "fragment_penalty");
+    }
+
 
     public void nextGame(View view) {
         Log.d("aktivitet", "NY AKTIVITET!!!");

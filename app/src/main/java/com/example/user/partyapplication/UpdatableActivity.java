@@ -41,6 +41,8 @@ public abstract class UpdatableActivity extends AppCompatActivity {
         }
     }
 
+
+
     @Override
     protected void onStart() {
         super.onStart();

@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/PenaltyFragment"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:layout_gravity="center" android:orientation="vertical"  >
+
+    <TextView
+        android:id="@+id/PenaltyText1" android:text="You have to drink"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/PenaltyText2" android:text="h no" android:textStyle="italic"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Press this after drinking"
+        android:onClick="killThis"
+        />
+</LinearLayout>
