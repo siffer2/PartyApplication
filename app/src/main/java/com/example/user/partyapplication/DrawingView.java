@@ -26,9 +26,13 @@ public class DrawingView extends View {
     private HashMap<Integer, Path> pathMap; // current Paths being drawn
     private HashMap<Integer, Point> previousPointMap; // current Points
 
-    public void killsomething(){
-        canvas = new Canvas();
-
+    public void eraseDrawing(){
+        //canvas = new Canvas();
+        pathMap.clear(); // remove all paths
+        previousPointMap.clear(); // remove all previous points
+        bitmap.eraseColor(Color.WHITE); // clear the bitmap
+        invalidate(); // refresh the screen
+        Log.d("aktivitet","killsomething i drawingview");
     }
     public DrawingView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);

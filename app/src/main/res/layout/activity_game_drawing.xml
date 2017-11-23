@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:onClick="hideText"
                 android:minHeight="30sp"
-                android:text="Hide Text" />
+                android:text="Start Drawing" />
 
             <Button
                 android:id="@+id/drawButton2"

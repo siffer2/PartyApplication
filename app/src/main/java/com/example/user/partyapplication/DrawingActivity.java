@@ -29,10 +29,9 @@ public class DrawingActivity extends UpdatableActivity {
     }
 
     public void eraseDrawing (View view){
-        drawingView.killsomething();
-
-        //TODO
+        drawingView.eraseDrawing();
     }
+
     public void hideText(View view){
         if(buttonPresses==0) {
             textView.setVisibility(view.GONE);
