@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public abstract class UpdatableActivity extends AppCompatActivity {
 
-    public String string = new String("Hello");
     protected static Activity thisActivity;
+    //Used to ensure no duplicate activities
+    String activityType;
+    protected static ArrayList<String> passedActivityTypes = new ArrayList<String>();
+
     protected static Game game = new Game();
 
     public UpdatableActivity(){
@@ -32,23 +37,30 @@ public abstract class UpdatableActivity extends AppCompatActivity {
         this.setThisActivity(this);
         Class NextActivity = game.nextActivity();
         if(NextActivity!=null){
-            Log.d("bammelam","Næste aktivitet indlæses");
             loadActivity(getThisActivity(), NextActivity);
         }
         else{
-            Log.d("bammelam","Returnerer til menuen");
-            //loadActivity(getThisActivity(), MainMenuActivity.class);
+            loadActivity(getThisActivity(), MainMenuActivity.class);
         }
     }
 
 
+    protected void isDuplicateActivity(String type){
+        activityType = type;
+
+        for (int i=0; i<passedActivityTypes.size();i++){
+            if (activityType.equals(passedActivityTypes.get(i))){
+                nextActivity();
+            }
+        }
+        passedActivityTypes.add(type);
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //Log.d("aktivitet", "currentactivity er" + ((UpdaterApplication) getApplication()).getUpdatable());
         Log.d("aktivitet", "Aktiviteter:"+game.activities.toString());
-
+        Log.d("aktivitet", "Aktiviteter:"+game.passedActivities.toString());
     }
 
     @Override

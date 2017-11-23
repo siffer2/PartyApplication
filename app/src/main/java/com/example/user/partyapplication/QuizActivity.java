@@ -1,7 +1,6 @@
 package com.example.user.partyapplication;
 
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,14 +10,15 @@ import android.widget.TextView;
 import java.util.concurrent.ThreadLocalRandom;
 
 //Return to MainMenuActivity, load fragments
-public class GameActivity extends UpdatableActivity {
+public class QuizActivity extends UpdatableActivity {
 
     String[] quizValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_quiz);
+
 
         //Randomly selects one of implementet questions, and returns the values for the UI.
         quizValues = selectQuiz();
@@ -37,7 +37,6 @@ public class GameActivity extends UpdatableActivity {
             viewArray[i].setText(quizValues[i]);
         }
 
-        this.string = "Game!";
 
     }
 
@@ -45,20 +44,14 @@ public class GameActivity extends UpdatableActivity {
     public void isCorrectAnswer(View v){
 
         Button b = (Button)v;
-        Log.d("aktivitet",b.getText().toString());
-        Log.d("aktivitet",quizValues[5]);
 
-        //nextActivity();
         if(b.getText().toString().equals(quizValues[5])){
             nextActivity();
         }
         else{
             Log.d("aktivitet","Ikke korrekt svar");
-            showEditDialog();
+            showPenaltyDialog();
         }
-
-        //Log.d("aktiviteter",v.getResources().getResourceEntryName(v.getId()));
-
     }
 
     //minQuiz and maxQuiz is the amount of implemented quizzes, starting at 1 because of string resource naming.
@@ -69,10 +62,15 @@ public class GameActivity extends UpdatableActivity {
         int quiz = randomInt(minQuiz, maxQuiz);
         String[] quizValues;
         if (quiz == 1) {
+            isDuplicateActivity("quiz1");
             return quizValues = getResources().getStringArray(R.array.q1);
-        } else if (quiz == 2) {
+        }
+        else if (quiz == 2) {
+            isDuplicateActivity("quiz2");
             return quizValues = getResources().getStringArray(R.array.q2);
-        } else if (quiz == 3) {
+        }
+        else if (quiz == 3) {
+            isDuplicateActivity("quiz3");
             return quizValues = getResources().getStringArray(R.array.q3);
         }
         return null;
@@ -84,13 +82,13 @@ public class GameActivity extends UpdatableActivity {
 
     public void killThis(View v){
         //dismiss();
-        editNameDialogFragment.dismiss();
+        penaltyFragment.dismiss();
     }
-    PenaltyFragment editNameDialogFragment;
-    private void showEditDialog() {
+    PenaltyFragment penaltyFragment;
+    private void showPenaltyDialog() {
         FragmentManager fm = getSupportFragmentManager();
-        editNameDialogFragment = PenaltyFragment.newInstance("Some Title");
-        editNameDialogFragment.show(fm, "fragment_penalty");
+        penaltyFragment = PenaltyFragment.newInstance("Some Title");
+        penaltyFragment.show(fm, "fragment_penalty");
     }
 
 
@@ -99,6 +97,6 @@ public class GameActivity extends UpdatableActivity {
         Log.d("aktiviteter",view.getResources().getResourceEntryName(view.getId()));
 
         nextActivity();
-        //finish();
+        finish();
     }
 }

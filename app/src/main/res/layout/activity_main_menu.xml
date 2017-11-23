@@ -18,10 +18,12 @@
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100sp"
             android:layout_weight="0"
-            android:text="Main Menu Button"
+            android:text="Start Game!"
             android:onClick="startGame"
+            android:layout_gravity="center"
+            android:background="@color/deepSkyBlue"
             />
 
     </LinearLayout>

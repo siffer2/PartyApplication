@@ -1,21 +1,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/PenaltyFragment"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:layout_gravity="center" android:orientation="vertical"  >
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_gravity="center" android:orientation="vertical"
+    android:layout_weight="100"
+    android:minWidth="1000dp"
+    android:minHeight="250dp">
 
     <TextView
-        android:id="@+id/PenaltyText1" android:text="You have to drink"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        android:id="@+id/PenaltyText1" android:text="WRONG! \n  You have to drink.."
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:gravity="center" android:layout_weight="0.25" android:textSize="20sp"
+        android:textAlignment="center"
+    />
     <TextView
-        android:id="@+id/PenaltyText2" android:text="h no" android:textStyle="italic"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        android:id="@+id/PenaltyText2" android:text="x sips!" android:textStyle="italic"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_weight="0.25" android:textSize="20sp"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/button10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_weight="0.25"
         android:text="Press this after drinking"
         android:onClick="killThis"
+        android:layout_gravity="bottom"
+        android:background="@color/deepSkyBlue"
+
         />
 </LinearLayout>

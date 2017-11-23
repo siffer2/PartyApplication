@@ -26,6 +26,10 @@ public class DrawingView extends View {
     private HashMap<Integer, Path> pathMap; // current Paths being drawn
     private HashMap<Integer, Point> previousPointMap; // current Points
 
+    public void killsomething(){
+        canvas = new Canvas();
+
+    }
     public DrawingView(Context context, AttributeSet attributeSet){
         super(context, attributeSet);
         showDrawing = new Paint();

@@ -4,18 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.partyapplication.GameDrawingActivity">
+    tools:context="com.example.user.partyapplication.DrawingActivity">
 
-    <com.example.user.partyapplication.DrawingView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/DrawingView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_id"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Hello"
-        android:onClick="nextGame"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="70sp"
+            android:orientation="horizontal"
+            android:background="@color/deepSkyBlue">
+            <Button
+                android:id="@+id/drawButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="hideText"
+                android:minHeight="30sp"
+                android:text="Hide Text" />
+
+            <Button
+                android:id="@+id/drawButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="eraseDrawing"
+                android:text="Erase Drawing"
+                android:visibility="gone"/>
+           </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/drawText"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="Draw: Fundamental attribution error. \n Hide the text, and have another player guess. Three failed guesses, and they drink!"/>
+
+        <com.example.user.partyapplication.DrawingView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
